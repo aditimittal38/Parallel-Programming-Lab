@@ -18,10 +18,10 @@ int main(){
 
     #pragma parallel for
     for(int i=0; i<N; i++){
-        C[i] = (A[i] + B[i]) *B[i];
+        C[i] = (A[i] + B[i]) + B[i] * A[i];
     }
     double end_time = omp_get_wtime();
-    double flops = (2*N)/(end_time - start_time);
+    double flops = (3*N)/(end_time - start_time);
     cout << "FLOPS = "<< flops <<endl;
     
 }

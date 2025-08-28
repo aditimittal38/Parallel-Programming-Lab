@@ -19,7 +19,7 @@ int main(){
         }
 
         omp_set_num_threads(n);
-        // or 
+
         // Environment variable: export OMP_NUM_THREADS=4
         // Command line: OMP_NUM_THREADS=4 ./a.out
         // Inside code: omp_set_num_threads(n);
