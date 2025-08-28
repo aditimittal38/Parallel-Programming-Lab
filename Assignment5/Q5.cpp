@@ -12,7 +12,7 @@ using namespace std;
 
 int main() {
     int N = 10;
-    vector<int> arr(N, 0);
+    vector<int> arr(N+1, 0);
 
     cout << "---------Using nowait ---------" << endl;
 
@@ -23,7 +23,7 @@ int main() {
             arr[i] = i * 2;
         }
         #pragma omp for
-        for (int i = 0; i < N; i++) {
+        for (int i = 1; i < N; i++) {
             cout << arr[i] << " ";
         }
     }
@@ -39,7 +39,7 @@ int main() {
         }
 
         #pragma omp for
-        for (int i = 0; i < N; i++) {
+        for (int i = 1; i < N; i++) {
             cout << arr[i] << " ";
         }
     }
