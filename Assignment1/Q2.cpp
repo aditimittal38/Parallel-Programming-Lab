@@ -5,6 +5,14 @@ int main(){
     int num_of_threads;
     cout<< "Enter number of threads: ";
     cin >> num_of_threads;
+
+    cout << "------------------Sequential--------------------------";
+    for(int i=0; i < num_of_threads; i++){
+        cout<<"Hello World" << endl;
+    }
+
+    cout << "------------------Parallel--------------------------";
+
     omp_set_num_threads(num_of_threads);
     #pragma omp parallel 
     {
