@@ -63,13 +63,13 @@ int main(){
 
     end_collapse = omp_get_wtime();
 
-    for (int i = 0; i<n ; i++){
-        for(int j = 0; j<n; j++){
-            cout << C[i][j] <<" ";
-        }
-        cout<<endl;
+    // for (int i = 0; i<n ; i++){
+    //     for(int j = 0; j<n; j++){
+    //         cout << C[i][j] <<" ";
+    //     }
+    //     cout<<endl;
         
-    }
+    // }
     cout << fixed << setprecision(9);
     double seq_time = (end_seq - start_seq);
     double parallel_time = (end_parallel - start_parallel);

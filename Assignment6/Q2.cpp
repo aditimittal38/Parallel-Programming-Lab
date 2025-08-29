@@ -13,7 +13,7 @@ int main() {
         A[i] = i * 1.5;
         B[i] = i * 2.0;
     }
-    
+
     cout << "------------Without reduction ----------------------"<< endl;
 
     double sum = 0.0;
@@ -28,9 +28,13 @@ int main() {
 
     sum = 0;
     start = omp_get_wtime();
-    #pragma omp parallel for reduction(+:sum)
+    #pragma omp parallel for 
     for (int i = 0; i < n; i++) {
-        sum += A[i] * B[i];
+        #pragma omp critical
+        {
+            sum += A[i] * B[i];
+        }
+        
     }
 
     end = omp_get_wtime();
